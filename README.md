@@ -1,4 +1,4 @@
-# ElectionAnalysis
+# Election Analysis
 
 ## Project Overview
 A Colorado Board of Elections employee has requested an election audit of a recent congressional election. 
@@ -14,7 +14,7 @@ A Colorado Board of Elections employee has requested an election audit of a rece
  - Data Source: election_results.csv
  - Software: Python 3.6.1, Visual Studio Code, 1.72.2
 
-##Summary
+## Summary
 The analysis of the election show that: 
  - There were 369,711 total votes cast in the election. 
  - 3 candidates received votes: 
@@ -26,7 +26,7 @@ The analysis of the election show that:
       - Diana DeGette received 73.8% of the vote and 272,892 total votes
       - Raymon Anthony Doane received 3.1% of the vote and 11,606 total votes
   - Election Winner: 
-      -Diana DeGette with 272,892 votes equal to 73.8% of the popular vote
+      - Diana DeGette with 272,892 votes equal to 73.8% of the popular vote
 
 ## Challenge Overview
 The challenge consisted of compiling data form the voter submissions for the congressional election. This consisted of retrieving the following information from a .csv file:
