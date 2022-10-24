@@ -88,8 +88,9 @@ with open(file_to_save, "w") as txt_file:
         f"\nElection Results\n"
         f"-------------------------\n"
         f"Total Votes: {total_votes:,}\n"
-        f"-------------------------\n\n"
-        f"County Votes:\n")
+        f"-------------------------\n"
+        f"County Votes:"
+        )
     print(election_results, end="")
 
     txt_file.write(election_results)
@@ -101,11 +102,11 @@ with open(file_to_save, "w") as txt_file:
             # 6c: Calculate the percentage of votes for the county.
         countyVotePercentage = float(cvotes) / float(total_votes)*100
         countyResults =(
-        f"{countyName}: {countyVotePercentage:.1f}% ({cvotes:,})\n")
+        f"{countyName}: {countyVotePercentage:.1f}% ({cvotes:,})")
             # 6d: Print the county results to the terminal.
         countyResults = (
             #f"County Votes"
-            f"{countyName}: {countyVotePercentage:.1f}%  ({cvotes:,})\n"
+            f"\n{countyName}: {countyVotePercentage:.1f}%  ({cvotes:,})"
             )
         print(countyResults, end="")
             # 6e: Save the county votes to a text file.
@@ -120,14 +121,14 @@ with open(file_to_save, "w") as txt_file:
 
     # 7: Print the county with the largest turnout to the terminal.
     largestCountyResults = (
-            f"___________________________________\n"
-            f"\nLargest County Turnout: {largestCounty}\n"
-            f"___________________________________\n"
+        f"\n___________________________________\n"
+        f"\nLargest County Turnout: {largestCounty}\n"
+        f"___________________________________\n"
             ) 
     print(largestCountyResults) 
 
     # 8: Save the county with the largest turnout to a text file.
-
+    txt_file.write(largestCountyResults)
 
     # Save the final candidate vote count to the text file.
     for candidate_name in candidate_votes:
@@ -136,7 +137,7 @@ with open(file_to_save, "w") as txt_file:
         votes = candidate_votes.get(candidate_name)
         vote_percentage = float(votes) / float(total_votes) * 100
         candidate_results = (
-            f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
+            f"\n{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
 
         # Print each candidate's voter count and percentage to the
         # terminal.
