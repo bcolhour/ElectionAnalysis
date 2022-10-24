@@ -30,6 +30,7 @@ largestCounty = ""
 countyVoterTurnout = 0
 countyVotePercentage = 0
 largestPercentage = 0
+largestVotes = 0
 
 
 # Read the csv and convert it into a list of dictionaries
@@ -100,34 +101,27 @@ with open(file_to_save, "w") as txt_file:
             # 6c: Calculate the percentage of votes for the county.
         countyVotePercentage = float(cvotes) / float(total_votes)*100
         countyResults =(
-            f"{countyName}: {countyVotePercentage:.1f}% ({cvotes:,})\n")
+        f"{countyName}: {countyVotePercentage:.1f}% ({cvotes:,})\n")
             # 6d: Print the county results to the terminal.
         countyResults = (
-            # f"\nVoters by County\n"
-            f"___________________________________\n"
-            f"County: {countyName}\n"
-            f"Total votes: {cvotes}\n"
-            f"Percentage of votes: {countyVotePercentage:.1f}%\n"
-            f"___________________________________\n"
+            #f"County Votes"
+            f"{countyName}: {countyVotePercentage:.1f}%  ({cvotes:,})\n"
             )
         print(countyResults, end="")
             # 6e: Save the county votes to a text file.
         txt_file.write(countyResults)
          # 6f: Write an if statement to determine the winning county and get its vote count.
-        largestVotes=cvotes
-        largestPercentage=countyVotePercentage
-        if(largestVotes > countyVoterTurnout):
+
+       
+        if(cvotes> largestVotes):
             largestCounty = countyName
             largestVotes = cvotes
-            largestPercentage = countyVotePercentage
+  
 
     # 7: Print the county with the largest turnout to the terminal.
     largestCountyResults = (
-            f"\n Largest County Results\n"
             f"___________________________________\n"
-            f"County: {largestCounty}\n"
-            f"Total votes: {countyVoterTurnout}\n"
-            f"Percentage of votes: {countyVotePercentage:.1f}%\n"
+            f"\nLargest County Turnout: {largestCounty}\n"
             f"___________________________________\n"
             ) 
     print(largestCountyResults) 
